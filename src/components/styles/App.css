@@ -24,6 +24,7 @@
 
 .card__cover img{
   width: 100%;
+  pointer-events: none;
 }
 
 /* ================
@@ -42,6 +43,8 @@ Form Login area style
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  user-select: none;
+  pointer-events: none;
 }
 
 .title img {

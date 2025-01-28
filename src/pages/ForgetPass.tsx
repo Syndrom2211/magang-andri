@@ -2,7 +2,7 @@ import CardForgetPassword from "../components/CardForgetPass";
 
 function ForgetPassword () {
     return(
-        <div>
+        <div className="forget-password__container">
             <CardForgetPassword/>
         </div>
         
