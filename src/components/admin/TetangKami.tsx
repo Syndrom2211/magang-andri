@@ -89,7 +89,7 @@ const AboutUsTable: FC = () => {
   return (
     <div className="content-grid">
       <div className="card">
-        <h3>Tentang Kami</h3>
+        <h2>Tentang Kami</h2>
         <Table columns={aboutUsColumns} data={filteredData} />
       </div>
     </div>

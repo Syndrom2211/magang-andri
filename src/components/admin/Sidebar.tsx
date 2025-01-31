@@ -4,7 +4,7 @@ import { FiMenu, FiHome, FiUsers, FiMessageSquare, FiShoppingBag, FiLogOut } fro
 import { MdOutlineWidgets } from 'react-icons/md';
 import { LuSettings2 } from 'react-icons/lu';
 import ContactUs from '../../assets/contact-mail.svg';
-import Yukmari from '../../assets/YukMari.svg';
+import Yukmari from '../../assets/Logo YMP2.png';
 
 interface SidebarProps {
   isOpen: boolean;

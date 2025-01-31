@@ -351,7 +351,7 @@
   table {
     width: 100%;
     min-width: 300px;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   table td, table th {
@@ -367,12 +367,12 @@
   }
 
   .card h3 {
-    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 8px;
   }
 
   .card p {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.4;
   }
 

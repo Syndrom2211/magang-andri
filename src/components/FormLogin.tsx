@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../components/Button";
-import Yukmari from "../assets/YukMari.svg";
+import Yukmari from "../assets/Logo YMP2.png";
 import Locked from "../assets/locked.svg";
 import User from "../assets/user.svg";
 import EyeOpen from "../assets/eye.svg";

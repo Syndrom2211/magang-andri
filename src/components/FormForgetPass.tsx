@@ -3,7 +3,7 @@ import Button from "./Button";
 import Locked from "../assets/locked.svg";
 import User from "../assets/user.svg";
 import EyeOpen from "../assets/eye.svg";
-import Yukmari from "../assets/YukMari.svg";
+import Yukmari from "../assets/Logo YMP2.png";
 import EyeClosed from "../assets/eye-crossed.svg";
 import ReCaptcha from "./reCaptcha";
 import "./styles/App.css";

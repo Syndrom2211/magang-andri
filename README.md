@@ -1,50 +1,70 @@
-# React + TypeScript + Vite
+# Admin Dashboard Yukmari Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Prasyarat
+Pastikan Anda memiliki prasyarat berikut sebelum melanjutkan:
+- Node.js (versi terbaru)
+- npm
 
-Currently, two official plugins are available:
+## Langkah-langkah Download dan Install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/Syndrom2211/magang-andri.git
+   cd magang-andri
+   ```
 
-## Expanding the ESLint configuration
+2. **Install Dependencies**
+   Menggunakan npm:
+   ```bash
+   npm install
+   ```
+## Cara Menggunakan
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Menjalankan Development Server**
+   Untuk menjalankan server pengembangan dengan hot module replacement (HMR):
+   ```bash
+   npm run dev
+   ```
+2. **Untuk Produksi**
+   Untuk membangun aplikasi untuk produksi:
+   ```bash
+   npm run build
+   ```
+3. **Menjalankan Preview**
+   Untuk melihat pratinjau build produksi secara lokal:
+   ```bash
+   npm run serve
+   ```
+## Struktur Folder
 
-- Configure the top-level `parserOptions` property like this:
+Berikut adalah struktur folder dari repository ini:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+/magang-andri
+├── /node_modules                # Direktori untuk dependencies
+├── /public                      # Direktori untuk aset publik (misal: index.html)
+├── /src                         # Direktori untuk kode sumber proyek
+│   ├── /assets                  # Aset-aset proyek (gambar, css, dll)
+│   ├── /components              # Komponen-komponen React
+│   ├── /context                 # Konfigurasi Search global
+│   ├── /pages                   # Page untuk Router React
+│   ├── App.tsx                  # File utama aplikasi React
+│   ├── index.css                # style global here
+│   ├── index.tsx                # Entry point aplikasi
+│   ├── react-table-conf.d.ts    # Deklarasi untuk react table
+│   └── vite-env.d.ts            # Deklarasi tipe untuk Vite
+├── .gitignore                   # File untuk mengabaikan file/direktori tertentu dari git
+├── package.json                 # File konfigurasi npm/yarn
+├── tsconfig.json                # Konfigurasi TypeScript
+├── vite.config.ts               # Konfigurasi Vite
+└── README.md                    # Panduan penggunaan proyek ini
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Cara Mengedit
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. **Mengedit Kode Sumber**
+   - Buka proyek ini menggunakan editor kode favorit Anda (misalnya, VS Code).
+   - Semua kode sumber dapat ditemukan di direktori `src/`.
+   - untuk mengedit halaman login bisa ditemukan di direktori `src/components/`
+   - untuk mengedit bagian halaman dashboard dapat ditemukan di direktori `src/components/admin/`
+   - dan untuk mengatur routing bisa dilakukan di file `App.tsx`
