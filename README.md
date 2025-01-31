@@ -18,6 +18,10 @@ Pastikan Anda memiliki prasyarat berikut sebelum melanjutkan:
    ```bash
    npm install
    ```
+3. **Install Tailwindcss**
+   ```bash
+   npm install @tailwindcss
+   ```
 ## Cara Menggunakan
 
 1. **Menjalankan Development Server**
