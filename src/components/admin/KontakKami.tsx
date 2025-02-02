@@ -4,8 +4,8 @@ import {FC} from 'react';
 const KontakKami: FC = () => (
     <div className="content-grid">
       <div className="card">
-        <h3>Kontak Kami</h3>
-        <p>Your messages will appear here</p>
+        <h2>Kontak Kami</h2>
+        <p>Bagian Kontent Kontak kami</p>
       </div>
     </div>
   );

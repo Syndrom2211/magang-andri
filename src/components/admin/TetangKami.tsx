@@ -15,10 +15,11 @@ const aboutUsData: AboutUsData[] = [
     contentType: "Header Title",
     content: "Tentang Kami" 
   },
-  { 
-    id: 2, 
-    contentType: "Title Description",
-    content: "Latar Belakang - Visi & Misi" 
+  
+  {
+    id: 2,
+    contentType: "Bredcrumb Description",
+    content: "Sekilas Tetang Kami"
   },
   { 
     id: 3, 
@@ -36,7 +37,13 @@ const aboutUsData: AboutUsData[] = [
       "2. Berkomitmen mengikuti perkembangan teknologi terbaru, terdepan, dan terpercaya sebagai keunggulan dalam layanan kami.\n" +
       "3. Berkomitmen memupuk hubungan jangka panjang dengan klien kami dan menjadi mitra yang dapat diandalkan dalam situasi dan kondisi apapun.\n" +
       "4. Memfasilitasi pelajar, mahasiswa, dan instansi pendidikan lainnya terhadap kepentingan yang mereka butuhkan, yang bersinergis dengan program - program yang ada di Yuk-Mari Project.",
+  }, 
+  { 
+    id: 5, 
+    contentType: "Title Description",
+    content: "Latar Belakang - Visi & Misi" 
   },
+
 ];
 
 const aboutUsColumns: Column<AboutUsData>[] = [
@@ -54,24 +61,11 @@ const aboutUsColumns: Column<AboutUsData>[] = [
   },
   {
     Header: "Actions",
-    Cell: ({ row }: { row: { original: AboutUsData } }) => {
-      const contentType = row.original.contentType;
-      
-      if (contentType === "Background" || contentType === "Vision & Mission") {
-        return (
-          <div className="flex gap-2">
-            <button className="text-blue-500 hover:underline">Edit</button>
-          </div>
-        );
-      }
-
-      return (
-        <div className="flex gap-2">
-          <button className="text-blue-500 hover:underline">Edit</button>
-          <button className="text-red-500 hover:underline">Delete</button>
-        </div>
-      );
-    },
+    Cell: () => (
+      <div className="flex gap-2">
+        <button className="text-blue-500 hover:underline">Edit</button>
+      </div>
+    ),
   },
 ];
 

@@ -7,6 +7,7 @@ const ReCaptcha = memo(() => {
       <GoogleReCaptchaProvider
         type="v2-checkbox"
         siteKey="6LfRuL8qAAAAAKyMIXTGO2h70-yKLBBd7C50pA1g"
+        language="id"
       >
         <GoogleReCaptchaCheckbox
           onChange={(token) => {

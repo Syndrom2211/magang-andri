@@ -118,14 +118,17 @@ const testimonialColumns: Column<TestimonialData>[] = [
     Cell: () => (
       <div className="flex gap-2">
         <button className="text-blue-500 hover:underline">Edit</button>
-        <button className="text-red-500 hover:underline">Delete</button>
       </div>
     ),
   },
 ];
 
 const TestimonialTable = () => {
-  return <Table columns={testimonialColumns} data={testimonialData} />;
+  return (
+    <>
+      <Table columns={testimonialColumns} data={testimonialData} isTestimonial={true} />;
+    </>
+  )
 };
 
 export default TestimonialTable;

@@ -25,14 +25,14 @@ function ForgetPassword () {
     <div className="form-container__forgetpass">
       <div className="title">
         <img src={Yukmari} alt="Yukmari" />
-        <p>Forget Your Password?</p>
+        <p>Lupa Password Anda?</p>
       </div>
 
       <form>
         <label htmlFor="email">Email</label>
         <div className="input-container__forgetpass">
           <img src={User} alt="User Icon" className="input-icon" />
-          <input type="email" placeholder="Your Email" id="email" />
+          <input type="email" placeholder="Masukan email anda" id="email" />
         </div>
 
         <label htmlFor="password">Password</label>
@@ -40,7 +40,7 @@ function ForgetPassword () {
           <img src={Locked} alt="Lock Icon" className="input-icon" />
           <input
             type={passwordType}
-            placeholder="Your New Password"
+            placeholder="Masukan password baru anda"
             id="password"
           />
           {/* Ikon mata untuk toggle password */}
@@ -57,7 +57,7 @@ function ForgetPassword () {
           <img src={Locked} alt="Lock Icon" className="input-icon" />
           <input
             type={confirmPasswordType}
-            placeholder="Confirm Your Password"
+            placeholder="Konfirmasi password baru anda"
             id="confirmPassword"
           />
           {/* Ikon mata untuk toggle confirm password */}
@@ -71,7 +71,7 @@ function ForgetPassword () {
 
         <ReCaptcha/>
 
-        <Button label="Submit" id='submitButton'/>
+        <Button label="Kirim" id='submitButton'/>
       </form>
     </div>
   );

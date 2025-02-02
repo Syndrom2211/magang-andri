@@ -29,14 +29,14 @@ function Form() {
     <div className="form-container">
       <div className="title">
         <img src={Yukmari} alt="Yukmari" />
-        <p>Please enter your detail</p>
+        <p>Silakan Login untuk Melanjutkan</p>
       </div>
 
       <form>
         <label htmlFor="email">Email</label>
         <div className="input-container">
           <img src={User} alt="User Icon" className="input-icon" />
-          <input type="email" placeholder="Your Email" id="email" />
+          <input type="email" placeholder="Masukan Email" id="email" />
         </div>
 
         <label htmlFor="password">Password</label>
@@ -44,7 +44,7 @@ function Form() {
           <img src={Locked} alt="Lock Icon" className="input-icon" />
           <input
             type={passwordType}
-            placeholder="Your Password"
+            placeholder="Masukan Password"
             id="password"
           />
           {/* Ikon mata untuk toggle password */}
@@ -56,11 +56,11 @@ function Form() {
           />
         </div>
 
-        <a onClick={() => handleClick('/ForgetPassword')}>Forget Password?</a>
+        <a onClick={() => handleClick('/ForgetPassword')}>Lupa Password?</a>
         
         <ReCaptcha/>
 
-        <Button label="Login" />
+        <Button label="Masuk" />
       </form>
     </div>
   );

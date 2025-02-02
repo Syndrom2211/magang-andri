@@ -39,6 +39,9 @@ Pastikan Anda memiliki prasyarat berikut sebelum melanjutkan:
    ```bash
    npm run serve
    ```
+4. **Akses Dashboard**
+   Untuk mengakses halaman dashboard masuk ke url `/dashboard`
+   
 ## Struktur Folder
 
 Berikut adalah struktur folder dari repository ini:
@@ -46,9 +49,9 @@ Berikut adalah struktur folder dari repository ini:
 ```
 /magang-andri
 ├── /node_modules                # Direktori untuk dependencies
-├── /public                      # Direktori untuk aset publik (misal: index.html)
+├── /public                      # Direktori untuk aset publik
 ├── /src                         # Direktori untuk kode sumber proyek
-│   ├── /assets                  # Aset-aset proyek (gambar, css, dll)
+│   ├── /assets                  # Aset-aset proyek (gambar)
 │   ├── /components              # Komponen-komponen React
 │   ├── /context                 # Konfigurasi Search global
 │   ├── /pages                   # Page untuk Router React

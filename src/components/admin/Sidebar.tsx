@@ -63,14 +63,14 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           <li className={location.pathname === '/dashboard/settings' ? 'active' : ''}>
             <NavLink to="/dashboard/settings">
               <LuSettings2 />
-              {isOpen && <span>Setting</span>}
+              {isOpen && <span>Pengaturan</span>}
             </NavLink>
           </li>
           <ul className="bottom-menu">
             <li>
               <NavLink to="/logout">
                 <FiLogOut />
-                {isOpen && <span>Logout</span>}
+                {isOpen && <span>Keluar</span>}
               </NavLink>
             </li>
           </ul>

@@ -1,12 +1,22 @@
 import { useTable, usePagination, useGlobalFilter, Column } from "react-table";
-import { FiSearch } from 'react-icons/fi';
+import { FiSearch, FiPlus } from 'react-icons/fi';
+import Modal from "react-modal";
+import { useState } from 'react';
 
 type TableProps<T extends object> = {
   columns: Column<T>[];
   data: T[];
+  isTestimonial?: boolean;
 };
 
-const Table = <T extends object>({ columns, data }: TableProps<T>) => {
+type TestimonialForm = {
+  image: File | null;
+  name: string;
+  university: string;
+  testimonial: string;
+};
+
+const Table = <T extends object>({ columns, data, isTestimonial }: TableProps<T>) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -31,6 +41,22 @@ const Table = <T extends object>({ columns, data }: TableProps<T>) => {
     usePagination
   );
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState<TestimonialForm>({
+    image: null,
+    name: '',
+    university: '',
+    testimonial: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(formData);
+    setIsModalOpen(false);
+  };
+
+  
+
   return (
     <div className="p-4">
       {/* Search */}
@@ -44,7 +70,87 @@ const Table = <T extends object>({ columns, data }: TableProps<T>) => {
           onChange={(e) => setGlobalFilter(e.target.value)}
           className="border rounded px-4 py-2 w-full md:w-1/3"
         />
+        {isTestimonial && (
+          <button 
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded flex items-center gap-2"
+            onClick={() => setIsModalOpen(true)}
+          >
+            <FiPlus />
+            Tambah Testimoni
+          </button>
+        )}
         </div>
+
+        {/* form tambah testimoni area */}
+
+        <Modal
+        isOpen={isModalOpen}
+        onRequestClose={() => setIsModalOpen(false)}
+        className="modal"
+        overlayClassName="modal-overlay"
+      >
+        <div className="bg-white p-4 md:p-6 rounded-lg w-[90%] md:w-[500px] max-h-[90vh] overflow-y-auto mx-auto">
+          <h2 className="text-xl md:text-2xl font-bold mb-4">Tambah Testimoni</h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label className="block mb-2 text-sm font-medium">Foto</label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => setFormData({...formData, image: e.target.files?.[0] || null})}
+                className="w-full p-2 text-sm border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            
+            <div>
+              <label className="block mb-2 text-sm font-medium">Nama</label>
+              <input
+                type="text"
+                value={formData.name}
+                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                className="w-full p-2 text-sm border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label className="block mb-2 text-sm font-medium">Universitas</label>
+              <input
+                type="text"
+                value={formData.university}
+                onChange={(e) => setFormData({...formData, university: e.target.value})}
+                className="w-full p-2 text-sm border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label className="block mb-2 text-sm font-medium">Testimonial</label>
+              <textarea
+                value={formData.testimonial}
+                onChange={(e) => setFormData({...formData, testimonial: e.target.value})}
+                className="w-full p-2 text-sm border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                rows={4}
+              />
+            </div>
+
+            <div className="flex flex-col-reverse sm:flex-row justify-end gap-2 pt-4">
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(false)}
+                className="w-full sm:w-auto px-4 py-2 border rounded text-sm hover:bg-gray-50"
+              >
+                Batal
+              </button>
+              <button
+                type="submit"
+                className="w-full sm:w-auto px-4 py-2 bg-blue-500 text-white rounded text-sm hover:bg-blue-600"
+              >
+                Simpan
+              </button>
+            </div>
+          </form>
+        </div>
+      </Modal>
+
       </div>
 
       {/* Table */}
