@@ -7,6 +7,7 @@ type TableProps<T extends object> = {
   columns: Column<T>[];
   data: T[];
   isTestimonial?: boolean;
+  isDokumentasi?: boolean;
 };
 
 type TestimonialForm = {
@@ -16,7 +17,7 @@ type TestimonialForm = {
   testimonial: string;
 };
 
-const Table = <T extends object>({ columns, data, isTestimonial }: TableProps<T>) => {
+const Table = <T extends object>({ columns, data, isTestimonial, isDokumentasi }: TableProps<T>) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -42,6 +43,7 @@ const Table = <T extends object>({ columns, data, isTestimonial }: TableProps<T>
   );
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen2, setIsModalOpen2] = useState(false);
   const [formData, setFormData] = useState<TestimonialForm>({
     image: null,
     name: '',
@@ -76,7 +78,17 @@ const Table = <T extends object>({ columns, data, isTestimonial }: TableProps<T>
             onClick={() => setIsModalOpen(true)}
           >
             <FiPlus />
-            Tambah Testimoni
+            Tambah Testimonial
+          </button>
+        )}
+
+        {isDokumentasi && (
+          <button 
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded flex items-center gap-2"
+            onClick={() => setIsModalOpen2(true)}
+          >
+            <FiPlus />
+            Tambah Image
           </button>
         )}
         </div>
@@ -150,6 +162,47 @@ const Table = <T extends object>({ columns, data, isTestimonial }: TableProps<T>
           </form>
         </div>
       </Modal>
+
+      {/* area form dokumentasi */}
+
+      <Modal
+        isOpen={isModalOpen2}
+        onRequestClose={() => setIsModalOpen2(false)}
+        className="modal"
+        overlayClassName="modal-overlay"
+      >
+        <div className="bg-white p-4 md:p-6 rounded-lg w-[90%] md:w-[500px] max-h-[90vh] overflow-y-auto mx-auto">
+          <h2 className="text-xl md:text-2xl font-bold mb-4">Tambah Testimoni</h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label className="block mb-2 text-sm font-medium">Foto</label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => setFormData({...formData, image: e.target.files?.[0] || null})}
+                className="w-full p-2 text-sm border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div className="flex flex-col-reverse sm:flex-row justify-end gap-2 pt-4">
+              <button
+                type="button"
+                onClick={() => setIsModalOpen2(false)}
+                className="w-full sm:w-auto px-4 py-2 border rounded text-sm hover:bg-gray-50"
+              >
+                Batal
+              </button>
+              <button
+                type="submit"
+                className="w-full sm:w-auto px-4 py-2 bg-blue-500 text-white rounded text-sm hover:bg-blue-600"
+              >
+                Simpan
+              </button>
+            </div>
+          </form>
+        </div>
+      </Modal>
+
 
       </div>
 
