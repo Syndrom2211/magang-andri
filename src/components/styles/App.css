@@ -58,7 +58,8 @@ Form Login area style
 }
 
 .form-container {
-  padding: 20px 20px 45px 20px;
+  padding: 20px 35px 45px 35px;
+  margin-left: 80px;
   background-color: #ffffff;
   border: none;
   border-radius: 16px;
@@ -77,7 +78,7 @@ Form Login area style
 }
 
 .form-container input {
-  padding: 15px 45px 15px 30px;
+  padding: 15px 45px 15px 35px;
   font-size: 0.875rem;
   border: 1px solid #B6B6B6;
   border-radius: 12px;
@@ -160,9 +161,8 @@ Responsive area
 ================= */
 @media screen and (max-width: 768px) {
   .card-container {
-    padding: 0 20px;
-    margin: 0 15px;
-    max-width: 75%;
+    padding: 0 15px;
+    max-width: 90%;
   }
 
   .card__body{
@@ -209,6 +209,15 @@ Responsive area
   .form-container {
     padding: 15px;
   }
+
+  .card-container__forgetpass {
+    width: 90%;
+  }
+
+  .form-container {
+    margin: 0;
+  }
+  
 }
 
 /* =====================
@@ -217,7 +226,6 @@ forget password area
 .card-container__forgetpass {
   display: flex;
   flex-direction: column;
-  width: 100%;
   max-width: 400px;
   margin: 0 auto;
   background-color: #F9F9F9;
@@ -225,6 +233,7 @@ forget password area
   border: 1px solid #B6B6B6;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .form-container__forgetpass {

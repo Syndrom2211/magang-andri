@@ -1,9 +1,8 @@
 import { FC } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { FiMenu, FiHome, FiUsers, FiMessageSquare, FiShoppingBag, FiLogOut } from 'react-icons/fi';
-import { MdOutlineWidgets } from 'react-icons/md';
+import { MdOutlineWidgets, MdPhonelinkSetup } from 'react-icons/md';
 import { LuSettings2 } from 'react-icons/lu';
-import ContactUs from '../../assets/contact-mail.svg';
 import Yukmari from '../../assets/Logo YMP2.png';
 
 interface SidebarProps {
@@ -56,7 +55,7 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           </li>
           <li className={location.pathname === '/dashboard/kontakKami' ? 'active' : ''}>
             <NavLink to="/dashboard/kontakKami">
-              <img src={ContactUs} alt=".." />
+            <MdPhonelinkSetup />
               {isOpen && <span>Kontak Kami</span>}
             </NavLink>
           </li>

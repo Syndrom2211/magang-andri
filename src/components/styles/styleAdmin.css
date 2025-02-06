@@ -353,12 +353,26 @@ modal area style
 
   .search-container {
     width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 12px; /* Adjust to align with input */
+    transform: translateY(0); /* Remove transform */
+    font-size: 14px;
+    z-index: 1;
   }
 
   .search-container input {
     width: 100%;
-    padding: 6px 30px;
+    padding: 8px 8px 8px 35px;
+    font-size: 0.875rem;
   }
 
   .content-grid, .content-grid2 {
@@ -415,5 +429,36 @@ modal area style
 
   .sidebar-nav a {
     padding: 8px 12px;
+  }
+
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal {
+    width: 75%;
+    max-width: 400px;
+    max-height: 90vh;
+    margin: auto;
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal form {
+    padding: 15px;
+  }
+
+  .modal input,
+  .modal textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .modal button {
+    width: 100%;
+    margin-top: 8px;
   }
 }

@@ -65,7 +65,7 @@ const AboutUsTable: FC = () => {
 
   return (
     <>
-        <Table columns={aboutUsColumns} data={filteredData} />
+      <Table columns={aboutUsColumns} data={filteredData} />
     </>
   );
 };

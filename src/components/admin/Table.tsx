@@ -100,7 +100,7 @@ const Table = <T extends object>({ columns, data, isTestimonial, isDokumentasi }
         onRequestClose={() => setIsModalOpen(false)}
         className="modal"
         overlayClassName="modal-overlay"
-      >
+        >
         <div className="bg-white p-4 md:p-6 rounded-lg w-[90%] md:w-[500px] max-h-[90vh] overflow-y-auto mx-auto">
           <h2 className="text-xl md:text-2xl font-bold mb-4">Tambah Testimoni</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
