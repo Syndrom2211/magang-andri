@@ -53,7 +53,7 @@ const dokumetasiColumns: Column<DokumentasiData>[] = [
     Cell: () => (
       <div className='flex gap-2'>
         <button className="text-blue-500 hover:underline">Edit</button>
-        <button className="text-red-500 hover:underline">Edit</button>
+        <button className="text-red-500 hover:underline">Delete</button>
       </div>
     ),
   },

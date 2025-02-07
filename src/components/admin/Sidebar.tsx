@@ -67,7 +67,7 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           </li>
           <ul className="bottom-menu">
             <li>
-              <NavLink to="/logout">
+              <NavLink to="/">
                 <FiLogOut />
                 {isOpen && <span>Keluar</span>}
               </NavLink>

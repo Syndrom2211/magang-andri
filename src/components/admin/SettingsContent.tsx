@@ -48,7 +48,7 @@ const SettingsContent: FC = () => {
                 value={newEmail}
                 onChange={(e) => setNewEmail(e.target.value)}
                 className="px-4 py-2 border border-gray-300 rounded"
-                placeholder="Enter new email"
+                placeholder="Masukan Email"
               />
               <div className="mt-2">
                 <button
@@ -89,7 +89,7 @@ const SettingsContent: FC = () => {
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
                 className="px-4 py-2 border border-gray-300 rounded"
-                placeholder="Enter new password"
+                placeholder="Masukan Password"
               />
               <div className="mt-2">
                 <button
