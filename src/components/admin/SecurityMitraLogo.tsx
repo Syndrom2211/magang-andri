@@ -73,6 +73,7 @@ const dokumetasiColumns: Column<DokumentasiData>[] = [
     Cell: () => (
       <div className='flex gap-2'>
         <button className="text-blue-500 hover:underline">Edit</button>
+        <button className="text-red-500 hover:underline">Edit</button>
       </div>
     ),
   },
@@ -91,7 +92,7 @@ const DokumentasiTable: FC = () => {
 
   return (
     <>
-        <Table columns={dokumetasiColumns} data={filteredData} isDokumentasi={true} />
+      <Table columns={dokumetasiColumns} data={filteredData} isDokumentasi={true} />
     </>
   );
 };
