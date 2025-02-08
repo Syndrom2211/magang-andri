@@ -9,6 +9,7 @@
   border-radius: 16px;
   border: 1px solid #B6B6B6;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideDown 1.2s ease-out;
 }
 
 .card__body {
@@ -156,6 +157,20 @@ button area style
   justify-content: center;
 }
 
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* =================
 Responsive area
 ================= */
@@ -234,6 +249,7 @@ forget password area
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
   margin-bottom: 20px;
+  animation: slideDown 1.2s ease-out;
 }
 
 .form-container__forgetpass {
