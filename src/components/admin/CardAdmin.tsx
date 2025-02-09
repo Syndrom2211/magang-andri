@@ -9,6 +9,7 @@ import KontakKami from './KontakKami';
 import ProjectBimble from './ProjectBimble';
 import ProgramContent from './ProgramContent';
 import SettingsContent from './SettingsContent';
+import LogsMenu from './Logs';
 import { SearchProvider } from '../../context/SearchContext';
 import '../styles/styleAdmin.css'
 
@@ -29,6 +30,7 @@ const Dashboard: React.FC = () => {
           <Route path="/programLainnya" element={<ProgramContent />} />
           <Route path="/kontakKami" element={<KontakKami />} />
           <Route path="/settings" element={<SettingsContent />} />
+          <Route path='/logs' element={<LogsMenu/>}/>
         </Routes>
       </main>
     </div>

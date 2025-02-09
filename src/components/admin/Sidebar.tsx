@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { FiMenu, FiHome, FiUsers, FiMessageSquare, FiShoppingBag, FiLogOut } from 'react-icons/fi';
+import { FiMenu, FiHome, FiUsers, FiMessageSquare, FiShoppingBag, FiLogOut, FiActivity } from 'react-icons/fi';
 import { MdOutlineWidgets, MdPhonelinkSetup } from 'react-icons/md';
 import { LuSettings2 } from 'react-icons/lu';
 import Yukmari from '../../assets/Logo YMP2.png';
@@ -63,6 +63,12 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
             <NavLink to="/dashboard/settings">
               <LuSettings2 />
               {isOpen && <span>Pengaturan</span>}
+            </NavLink>
+          </li>
+          <li className={location.pathname === '/dashboard/logs' ? 'active' : ''}>
+            <NavLink to="/dashboard/logs">
+              < FiActivity />
+              {isOpen && <span>Logs</span>}
             </NavLink>
           </li>
           <ul className="bottom-menu">
