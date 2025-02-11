@@ -8,6 +8,7 @@ import image6 from "../../assets/ProjectBimbleClient/B10.jpg"
 import image7 from "../../assets/ProjectBimbleClient/B11.jpg"
 import image8 from "../../assets/ProjectBimbleClient/B12.jpg"
 import {Column} from 'react-table';
+import { useState } from 'react';
 
 
 type TestimonialData = {
@@ -89,13 +90,42 @@ const testimonialColumns: Column<TestimonialData>[] = [
   {
     Header: "Image",
     accessor: "image",
-    Cell: ({ value }) => (
-      <img
-        src={value}
-        alt="Testimonial"
-        className="w-20 h-16 object-cover rounded-full"
-      />
-    ),
+    Cell: ({ value }) => {
+      const [showModal, setShowModal] = useState(false);
+
+      return (
+        <>
+          <div className="relative group" onClick={() => setShowModal(true)}>
+            <img
+              src={value}
+              alt="Testimonial"
+              className="w-16 h-16 object-cover rounded-full cursor-pointer"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
+              <span className="text-white text-xs text-center px-1">View Image</span>
+            </div>
+          </div>
+          
+          {showModal && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={() => setShowModal(false)}>
+              <div className="relative">
+                <img
+                  src={value}
+                  alt="Testimonial Large"
+                  className="w-[400px] max-h-[80vh] object-contain"
+                />
+                <button
+                  className="absolute top-2 right-2 text-white bg-black bg-opacity-50 rounded-full w-8 h-8"
+                  onClick={() => setShowModal(false)}
+                >
+                x
+                </button>
+              </div>
+            </div>
+          )}
+        </>
+      );
+    },
   },
   {
     Header: "Company",
